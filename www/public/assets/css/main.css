@@ -1,0 +1,104 @@
+body {
+	padding-top: 80px;
+}
+
+.panel-error-log {
+	overflow: scroll;
+	height: 400px;
+}
+
+.content-container {
+	width: 100%;
+	padding: 15px;
+	padding-left: 260px;
+}
+
+.navbar-container {
+	width: 100%;
+	padding-left: 230px;
+}
+
+.sidebar {
+	background-color: #303030;
+	border-right: 1px solid #464545;
+	bottom: 0;
+	display: block;
+	height: 100%;
+	left: 0;
+	overflow-y: auto;
+	overflow-x: hidden;
+	padding: 5px;
+	position: fixed;
+	top: 81px;
+	z-index: 1000;
+	width: 250px;
+}
+
+.sidebar-nav {
+	margin-bottom: 20px;
+	margin-left: -20px;
+	margin-right: -21px;
+	list-style: none;
+}
+
+.sidebar-nav li {
+	text-indent: 20px;
+	line-height: 40px;
+}
+
+.sidebar-nav li a {
+	display: block;
+	padding-right: 20px;
+	padding-left: 20px;
+	text-decoration: none;
+	color: #999;
+	border-left: 10px solid rgba(255, 255, 255, 0);
+}
+
+.sidebar-nav li a:hover {
+	text-decoration: none;
+	color: #fff;
+	background: rgba(0, 0, 0, 0.4);
+	border-left: 10px solid #009871;
+}
+
+.icon-nav {
+	display: inline-block;
+	height: 80px;
+	padding: 0;
+	margin: 0;
+}
+
+.icon-nav > li {
+	float: left;
+	min-width: 90px;
+	height: 80px;
+	padding: 0;
+	margin: 0;
+	text-align: center;
+	list-style: none;
+}
+
+.icon-nav > li > a {
+	display: block;
+	height: 100%;
+	padding: 0 15px;
+	font-size: 12px;
+	font-weight: bold;
+}
+
+.icon-nav > li > a > i {
+	position: relative;
+	top: 2px;
+	display: inline-block;
+	width: 24px;
+	height: 24px;
+	margin-top: 12px;
+	margin-bottom: 9px;
+	font-size: 28px;
+}
+
+.icon-nav > li > a > span {
+	display: block;
+	padding-bottom: 2px;
+}
