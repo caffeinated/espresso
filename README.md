@@ -1,6 +1,5 @@
 espresso
 ========
-![Screenshot](http://i.imgur.com/XZ8vHVR.png)
 
 Table of Contents
 -----------------
@@ -22,6 +21,9 @@ espresso is a virtual host manager for the Linux platform. espresso is built wit
 
 Screenshots
 -----------
+
+### Welcome Screen
+![Welcome Screen](http://i.imgur.com/XZ8vHVR.png)
 
 ### Error Log
 ![Error Log](http://i.imgur.com/BCx4EEK.png)
