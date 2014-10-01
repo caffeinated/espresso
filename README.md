@@ -52,10 +52,8 @@ espresso requires **sudo** to properly run and perform the task of creating virt
 To run espresso, simply run the following command in your terminal from the root of your espresso folder:
 
 ```
-sudo ./espresso & disown
+sudo ./espresso
 ```
-
-the `& disown` portion simply allows you to close the terminal after espresso opens without closing espresso with it.
 
 ---
 
