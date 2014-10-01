@@ -2,7 +2,7 @@
 
 use Illuminate\Routing\Router;
 use Illuminate\Contracts\Routing\UrlGenerator;
-use Illuminate\Routing\RouteServiceProvider as ServiceProvider;
+use Illuminate\Foundation\Support\Providers\RouteServiceProvider as ServiceProvider;
 
 class RouteServiceProvider extends ServiceProvider {
 
@@ -17,9 +17,7 @@ class RouteServiceProvider extends ServiceProvider {
 	 */
 	public function before(Router $router, UrlGenerator $url)
 	{
-		$url->setRootControllerNamespace(
-			trim(config('namespaces.controllers'), '\\')
-		);
+		$url->setRootControllerNamespace('App\Http\Controllers');
 	}
 
 	/**
@@ -29,12 +27,12 @@ class RouteServiceProvider extends ServiceProvider {
 	 */
 	public function map()
 	{
+		// Once the application has booted, we will include the default routes
+		// file. This "namespace" helper will load the routes file within a
+		// route group which automatically sets the controller namespace.
 		$this->app->booted(function()
 		{
-			// Once the application has booted, we will include the default routes
-			// file. This "namespace" helper will load the routes file within a
-			// route group which automatically sets the controller namespace.
-			$this->namespaced(function(Router $router)
+			$this->namespaced('App\Http\Controllers', function(Router $router)
 			{
 				require app_path().'/Http/routes.php';
 			});

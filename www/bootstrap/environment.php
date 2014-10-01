@@ -14,7 +14,7 @@
 $env = $app->detectEnvironment([
 
 	'local' => [
-		'kai-ubuntu',
+		'Atom',
 		'Oxygen'
 	],
 
