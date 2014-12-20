@@ -55,4 +55,17 @@ class VirtualHostsController extends Controller
 
 		return Redirect::to('/');
 	}
+
+	public function edit($key)
+	{
+		$vHost = $this->virtualHosts->readvHost($key);
+		$vHost = $vHost[0];
+
+		return view('virtualhosts.edit', compact('vHost'));
+	}
+
+	public function update()
+	{
+		
+	}
 }

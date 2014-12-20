@@ -1,9 +1,9 @@
 <?php
 namespace App;
 
-use \Agent;
-use \Config;
-use \File;
+use Agent;
+use Config;
+use File;
 
 class VirtualHosts
 {
@@ -81,6 +81,36 @@ class VirtualHosts
 				return array_values($hostsArray);
 			break;
 		}
+	}
+
+	/**
+	 * Read and parse the contents of the specified virtual host file.
+	 * 
+	 * @param  integer $key
+	 * @return array
+	 */
+	public function readvHost($key)
+	{
+		$locations = [
+			'Linux' => '/etc/apache2/sites-enabled',
+			'OS X'  => '/etc/apache2/sites-enabled',
+		];
+
+		$allvHosts     = $this->getVirtualHosts();
+		$vHostFile     = $locations[Agent::platform()].'/'.$allvHosts[$key];
+		$vHostsContent = file_get_contents($vHostFile);
+
+		preg_match_all("'(#|)<VirtualHost(.*?)<\/VirtualHost>'si", $vHostsContent, $matches);
+
+		foreach ($matches[0] as $key => $vHost) {
+			preg_match("'DocumentRoot \"(.*?)\"'si", $vHost, $documentRoot);
+			preg_match("'ServerName (.*?)\n'si", $vHost, $serverName);
+
+			$vHostsArray[$key]['documentRoot'] = trim($documentRoot[1]);
+			$vHostsArray[$key]['serverName']   = trim($serverName[1]);
+		}
+
+		return $vHostsArray;
 	}
 
 	/**

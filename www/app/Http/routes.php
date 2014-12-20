@@ -16,6 +16,9 @@ Route::get('/', 'EspressoController@index');
 Route::get('virtualhost/add', 'VirtualHostsController@add');
 Route::post('virtualhost/add', 'VirtualHostsController@store');
 
+Route::get('virtualhost/edit/{key}', 'VirtualHostsController@edit');
+Route::post('virtualhost/edit/{key}', 'VirtualHostsController@update');
+
 Route::get('apache/error-log', 'Apache\ErrorLogController@index');
 Route::get('apache/error-log/show', 'Apache\ErrorLogController@show');
 

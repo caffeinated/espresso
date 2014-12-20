@@ -1,7 +1,7 @@
 <div class="sidebar">
 	<ul class="sidebar-nav">
-		@foreach ($virtualHosts as $host)
-			<li><a href="#">{{$host}}</a></li>
+		@foreach ($virtualHosts as $key => $host)
+			<li><a href="/virtualhost/edit/{{ $key }}">{{ $host }}</a></li>
 		@endforeach
 	</ul>
 </div>

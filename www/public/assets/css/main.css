@@ -10,12 +10,12 @@ body {
 .content-container {
 	width: 100%;
 	padding: 15px;
-	padding-left: 260px;
+	padding-left: 320px;
 }
 
 .navbar-container {
 	width: 100%;
-	padding-left: 230px;
+	padding-left: 320px;
 }
 
 .sidebar {
@@ -31,7 +31,7 @@ body {
 	position: fixed;
 	top: 81px;
 	z-index: 1000;
-	width: 250px;
+	width: 300px;
 }
 
 .sidebar-nav {
