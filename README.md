@@ -1,3 +1,5 @@
+# This package has been abandoned and is no longer maintained.
+
 espresso
 ========
 
